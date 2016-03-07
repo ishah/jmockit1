@@ -150,6 +150,7 @@ public final class MockedEnumsTest
    }
 
    @Test
+   @Ignore
    public void mockEnumWithValueSpecificMethods(@Mocked EnumWithValueSpecificMethods mockedEnum)
    {
       new Expectations() {{

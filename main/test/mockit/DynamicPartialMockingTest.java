@@ -749,6 +749,7 @@ public final class DynamicPartialMockingTest
    @Test
    public void taskWithConsoleInputTerminatingNormally() throws Exception
    {
+	  System.out.println("");
       new Expectations(System.in) {{
          System.in.read(); returns((int) 'A', (int) 'x', (int) 'Z');
       }};

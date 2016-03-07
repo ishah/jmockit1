@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Rogério Liesenfeld
+ * Copyright (c) 2006 Rog��rio Liesenfeld
  * This file is subject to the terms of the MIT license (see LICENSE.txt).
  */
 package mockit.internal.expectations.invocation;
@@ -90,7 +90,7 @@ abstract class DynamicInvocationResult extends InvocationResult
    @Nullable
    protected final Object executeMethodToInvoke(@Nonnull Object[] args)
    {
-      ReentrantLock reentrantLock = RecordAndReplayExecution.RECORD_OR_REPLAY_LOCK;
+      ReentrantLock reentrantLock = RecordAndReplayExecution.RECORD_OR_REPLAY_LOCKS.get();
 
       if (!reentrantLock.isHeldByCurrentThread()) {
          return MethodReflection.invoke(targetObject, methodToInvoke, args);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Rogério Liesenfeld
+ * Copyright (c) 2006 Rog��rio Liesenfeld
  * This file is subject to the terms of the MIT license (see LICENSE.txt).
  */
 package mockit.internal.state;
@@ -134,7 +134,7 @@ public final class ExecutingTest
       }
 
       //noinspection LockAcquiredButNotSafelyReleased
-      RecordAndReplayExecution.TEST_ONLY_PHASE_LOCK.lock();
+      RecordAndReplayExecution.TEST_ONLY_PHASE_LOCKS.get().lock();
 
       return currentRecordAndReplay;
    }

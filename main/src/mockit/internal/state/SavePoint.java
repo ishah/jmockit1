@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Rogério Liesenfeld
+ * Copyright (c) 2006 Rog��rio Liesenfeld
  * This file is subject to the terms of the MIT license (see LICENSE.txt).
  */
 package mockit.internal.state;
@@ -30,7 +30,7 @@ public final class SavePoint
 
    public synchronized void rollback()
    {
-      RECORD_OR_REPLAY_LOCK.lock();
+      RECORD_OR_REPLAY_LOCKS.get().lock();
 
       try {
          MockFixture mockFixture = TestRun.mockFixture();
@@ -41,7 +41,7 @@ public final class SavePoint
          previousMockClasses.rollback();
       }
       finally {
-         RECORD_OR_REPLAY_LOCK.unlock();
+         RECORD_OR_REPLAY_LOCKS.get().unlock();
       }
    }
 }

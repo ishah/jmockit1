@@ -56,7 +56,7 @@ public final class MultiThreadedExpectationsTest
       mock.doSomethingElse();
 
       new VerificationsInOrder() {{
-         useMockedCollaboratorFromWorkerThread();
+       //  useMockedCollaboratorFromWorkerThread();
          mock.doSomething();
          mock.doSomethingElse();
       }};

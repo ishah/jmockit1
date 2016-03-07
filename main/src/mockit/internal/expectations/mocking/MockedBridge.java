@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Rogério Liesenfeld
+ * Copyright (c) 2006 Rog��rio Liesenfeld
  * This file is subject to the terms of the MIT license (see LICENSE.txt).
  */
 package mockit.internal.expectations.mocking;
@@ -35,7 +35,7 @@ public final class MockedBridge extends MockingBridge
       Object[] mockArgs = extractMockArguments(6, args);
 
       boolean regularExecutionWithRecordReplayLock =
-         executionMode == ExecutionMode.Regular.ordinal() && RECORD_OR_REPLAY_LOCK.isHeldByCurrentThread();
+         executionMode == ExecutionMode.Regular.ordinal() && RECORD_OR_REPLAY_LOCKS.get().isHeldByCurrentThread();
       Object rv;
 
       if (regularExecutionWithRecordReplayLock && mocked != null) {
